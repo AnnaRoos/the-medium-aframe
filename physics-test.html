@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>L24 - Physics and collisions</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <!-- ******** NEW EVENT-SET COMPONENT VERSION FOR A-FRAME v1.0.4 ******** -->
+        <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+        <!-- ******** NEW SUPER-HANDS COMPONENT VERSION FOR A-FRAME v1.0.4 ******** -->
+        <!-- ******** With v3.0.0 you need to serve progressive-controls yourself ******** -->
+        <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
+        <script src="progressive-controls.js"></script>
+        <!-- ******** THE PHYSICS SYYSTEM HAS BEEN ORGANISED IN A SPECIFIC COMPONENT (no more aframe-extras) ******** -->
+        <!-- ******** You can find out more visiting the repo here: https://github.com/donmccurdy/aframe-physics-system ******** -->
+        <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    </head>
+
+    <body>
+        <!-- ******** For the code related to the physics and the event-set component, NOTHING HAS CHANGED WITH v1.0.4 ******** -->
+        <!-- ******** For the external components used in the lecture, you can read details on their new version in the <head> element) ******** -->
+        <!-- ******** For the code related to the animation, SOME THINGS HAVE CHANGED WITH v1.0.4 ******** -->
+        <!-- The <a-animation> system was dismissed with the v0.9.0 release,
+             and since then A-Frame started including the "animation" component
+             in its core default components, so there is no more need to install
+             any script to use it (line 65).
+             You can learn more about the "animation" component in Section 7
+             Lecture 31 "Animation component. Moreover, since some of the properties
+             come with different names, you can find all their names and values
+             on the official A-Frame documentation at this link:
+             https://aframe.io/docs/1.0.0/components/animation.html -->
+        <a-scene physics="gravity: -9.8; restitution: 0.7">
+
+            <!-- Assets Management System -->
+            <a-assets>
+                <img id="ground" src="https://cdn.glitch.com/b1aab198-7021-4175-b744-a5da49dc0631%2Ffloor-1024.jpg?v=1621153083759">
+            </a-assets>
+            <!-- Progressive Controls -->
+            <a-entity progressive-controls position="0 0 5"></a-entity>
+
+            <!-- Ground -->
+            <a-plane src="#ground" scale="50 50 1" repeat="5 5 1" rotation="-90 0 0"
+                     static-body>
+            </a-plane>
+
+            <!-- Red Box -->
+            <a-box color="#AA0000" position="-3.5 0.5 -4">
+                <a-box color="#AA0000" visible="false" scale="2 3 1.5" position="0 1 0"
+                       static-body>
+                </a-box>
+            </a-box>
+
+            <!-- Green Sphere -->
+            <a-sphere color="#00AA00" radius="0.5" position="-1 4 -4" grabbable
+                      dynamic-body="linearDamping: 0.05; mass: 1">
+            </a-sphere>
+
+            <!-- Yellow Sphere -->
+            <a-sphere color="#FFAA00" radius="0.5" position="1 4 -4" grabbable
+                      dynamic-body="linearDamping: 0.5; angularDamping: 0.3; mass: 10">
+            </a-sphere>
+
+            <!-- Blue Box -->
+            <a-box color="#00AAFF" position="3.5 2 -4"
+                   static-body="shape: sphere; sphereRadius: 1"
+                   event-set__color="_event: collide; material.color: #0055AA"
+                   animation="property: rotation; to: 0 360 0; loop: true; dur: 3000">
+            </a-box>
+
+        </a-scene>
+    </body>
+</html>

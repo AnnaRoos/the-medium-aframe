@@ -1,0 +1,21 @@
+.info-box {
+  z-index: 100;
+  position: relative;
+  background-color: rgb(238, 70, 162);
+  width: 500px;
+  margin: 0 auto;
+  top: 200px;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+/*   box-shadow: 2px 2px 2px gray; */
+  font-family: fantasy;
+}
+
+.info-box h1 {
+  font-size: 36px;
+}
+
+.info-box p {
+  font-size: 24px;
+}

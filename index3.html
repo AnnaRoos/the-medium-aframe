@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>The Medium</title>
+    <meta name="description" content="The Medium" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <!--     AFRAME EXTRA -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
+    <!-- LOOK-AT COMPONENT -->
+    <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
+    <!-- ******** NEW EVENT-SET COMPONENT VERSION FOR A-FRAME v1.0.4 ******** -->
+    <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
+    <!-- ******** THE PHYSICS SYYSTEM HAS BEEN ORGANISED IN A SPECIFIC COMPONENT (no more aframe-extras) ******** -->
+    <!-- ******** You can find out more visiting the repo here: https://github.com/donmccurdy/aframe-physics-system ******** -->
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="./js/components.js"></script>
+  </head>
+  <body>
+    <a-scene
+      physics="gravity: -9.8; restitution: 0.7;"
+      vr-mode-ui="enabled: false"
+    >
+      <a-assets>
+        <a-asset-item id="table" src="./assets/table/table.glb"></a-asset-item>
+        <a-asset-item id="chair" src="./assets/chair/chair.glb"></a-asset-item>
+        <a-asset-item
+          id="fireplace"
+          src="./assets/fireplace/fireplace.glb"
+        ></a-asset-item>
+        <a-asset-item id="synth" src="./assets/synth/synth.glb"></a-asset-item>
+        <a-asset-item
+          id="chandelier"
+          src="./assets/chandelier/chandelier.glb"
+        ></a-asset-item>
+        <a-asset-item id="pig" src="./assets/pig/pig-bank.glb"></a-asset-item>
+        <a-asset-item
+          id="bookcase"
+          src="./assets/bookcase/bookcase.glb"
+        ></a-asset-item>
+        <a-asset-item
+          id="mirror"
+          src="./assets/mirror/mirror.glb"
+        ></a-asset-item>
+        <img id="portrait" src="./assets/pictures/trapped.jpg" />
+      </a-assets>
+
+<a-entity id="rig"
+          movement-controls
+          position="0 0 5">
+  <a-entity camera
+            position="0 1.6 0"
+            look-controls="pointerLockEnabled: true">
+          <a-cursor></a-cursor>
+          </a-entity>
+</a-entity>
+
+      </a-entity>
+
+      <a-sky color="#00004d"></a-sky>
+
+      <a-plane
+        static-body
+        id="floor"
+        position="0 0 0"
+        rotation="-90 0 0"
+        width="10"
+        height="10"
+        color="#302d2d"
+        shadow
+      >
+      </a-plane>
+      <a-box
+        static-body
+        id="roof-right"
+        position="3 5 0"
+        rotation="45 -90 0"
+        width="10"
+        height="8.5"
+        depth="0.2"
+        material="color: #a98166;
+        side: double"
+        shadow
+      ></a-box>
+      <a-box
+        static-body
+        id="roof-left"
+        position="-3 5 0"
+        rotation="-45 -90 0"
+        width="10"
+        height="8.5"
+        depth="0.2"
+        material="color: #a98166;
+        side: double"
+        shadow
+      ></a-box>
+      <a-plane
+        static-body
+        id="back-wall"
+        position="0 1.5 -5"
+        rotation="0 0 0"
+        width="10"
+        height="3"
+        depth="0.2"
+        material="color: #a98166;
+        side: double"
+      ></a-plane>
+      <a-box
+        static-body
+        id="right-wall"
+        position="5 1.5 0"
+        rotation="0 -90 0"
+        width="10"
+        height="3"
+        depth="0.2"
+        material="color: #a98166;
+        side: double"
+      ></a-box>
+      <a-box
+        static-body
+        id="left-wall"
+        position="-5 1.5 0"
+        rotation="0 -90 0"
+        width="10"
+        height="3"
+        depth="0.2"
+        material="color: #a98166;
+        side: double"
+      ></a-box>
+      <a-triangle
+        position="-5 3 -5"
+        material="color: #a98166;
+        side: double;"
+        vertex-a="10 0"
+        vertex-b="0 0"
+        vertex-c="5 5"
+      >
+      </a-triangle>
+      <a-gltf-model
+        static-body
+        src="#table"
+        position="0 0.7 0.5"
+        scale="0.004 0.004 0.004"
+      ></a-gltf-model>
+      <a-gltf-model
+        static-body
+        src="#chair"
+        position="0 0.3 0"
+        scale="0.06 0.06 0.06"
+      ></a-gltf-model>
+      <a-gltf-model
+        static-body
+        src="#fireplace"
+        position="0 0 -4.6"
+        scale="0.3 0.3 0.3"
+      ></a-gltf-model>
+      <a-gltf-model
+        static-body
+        src="#synth"
+        position="-4.8 0.3 -1"
+        rotation="0 90 0"
+        scale="0.4 0.4 0.4"
+      ></a-gltf-model>
+      <a-gltf-model
+        static-body
+        clickable
+        src="#bookcase"
+        position="-3.4 0.5 0"
+        rotation="0 -90 0"
+        scale="0.7 0.7 0.7"
+        change-perspective="target: #camera;"
+      ></a-gltf-model>
+      <a-gltf-model
+        static-body
+        src="#mirror"
+        position="-3 1.5 -4.9"
+        rotation="0 0 0"
+        scale="0.1 0.1 0.1"
+      ></a-gltf-model>
+      <a-image
+        src="#portrait"
+        position="-3 1.5 -4.87"
+        height="0.9"
+        width="0.5"
+        event-set__fadeout="_event: click;
+        animation.property: opacity;
+        animation.from: 1;
+        animation.to: 0;
+        animation.dur: 1500"
+      ></a-image>
+      <a-gltf-model
+        static-body
+        src="#chandelier"
+        position="0 5 0"
+        rotation="0 0 0"
+        scale="0.2 0.2 0.2"
+      ></a-gltf-model>
+      <a-gltf-model
+        dynamic-body
+        grabbable
+        src="#pig"
+        position="3 0.5 0"
+        scale="0.5 0.5 0.5"
+                event-set__fadeout="_event: click;
+        animation.property: opacity;
+        animation.from: 1;
+        animation.to: 0;
+        animation.dur: 1500"
+      ></a-gltf-model>
+    </a-scene>
+  </body>
+</html>
