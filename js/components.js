@@ -1,6 +1,3 @@
-let fadeAway = false;
-let pigFly = false;
-
 AFRAME.registerComponent('change-perspective', {
   schema: {
     target: { type: 'selector', default: '' },
@@ -10,9 +7,7 @@ AFRAME.registerComponent('change-perspective', {
     this.eventHandlerFn = function () {
       if (self.data.target.object3D.position.y < 0) {
         self.data.target.object3D.position.y += 1.2;
-                const portrait = document.querySelector('#portrait');
-                portrait.setAttribute('fade-away', 'perspective', true);
-                console.log(portrait.perspective);
+        self.el.emit('perspective', { changed: true });
       } else if (self.data.target.object3D.position.y === 0) {
         self.data.target.object3D.position.y -= 1.2;
       }
@@ -26,13 +21,10 @@ AFRAME.registerComponent('change-perspective', {
 });
 
 AFRAME.registerComponent('fade-away', {
-  schema: {
-    perspective: { type: 'boolean', default: false },
-  },
   init: function () {
     const el = this.el;
     const data = this.data;
-    if (data.perspective) {
+    el.sceneEl.addEventListener('perspective', function () {
       el.addEventListener('click', function () {
         el.setAttribute('animation', {
           property: 'material.opacity',
@@ -41,6 +33,7 @@ AFRAME.registerComponent('fade-away', {
           dur: 1500,
         });
       });
-    }
+    });
   },
 });
+
