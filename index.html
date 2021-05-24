@@ -61,6 +61,10 @@
           id="mirror"
           src="./assets/mirror/mirror.glb"
         ></a-asset-item>
+        <a-asset-item
+          id="pillar"
+          src="./assets/pillar/pillar.glb"
+        ></a-asset-item>
 
         <img id="eye-pic" src="./assets/pictures/eye.jpg" />
         <img id="wood" src="./assets/textures/wood.jpg" />
@@ -180,14 +184,16 @@
       <a-gltf-model
         static-body
         src="#table"
-        position="0 0.7 0.5"
+        position="3.5 0.7 0.5"
         scale="0.004 0.004 0.004"
+        rotation="0 90 0"
       ></a-gltf-model>
       <a-gltf-model
         static-body
         src="#chair"
-        position="0 0.3 0"
+        position="4.5 0.3 0.5"
         scale="0.06 0.06 0.06"
+        rotation="0 -90 0"
       ></a-gltf-model>
       <a-plane
         position="-4.89 2.05 0.9"
@@ -267,11 +273,27 @@
         scale="0.2 0.2 0.2"
       ></a-gltf-model>
       <a-gltf-model
+        static-body
+        src="#pillar"
+        position="4 0 -4.5"
+        scale="0.15 0.15 0.15"
+      ></a-gltf-model>
+      <a-box
+        static-body
+        id="flying"
+        opacity="0"
+        height="0.1"
+        width="0.4"
+        depth="0.4"
+        position="4 1.35 -4.5"
+        fly="target: #grounded-pig"
+      ></a-box>
+      <a-gltf-model
+        id="grounded-pig"
         dynamic-body
         grabbable
-        look-at="cam"
         src="#pig"
-        position="3 0.5 0"
+        position="3 0.5 -4.5"
         scale="0.5 0.5 0.5"
       ></a-gltf-model>
       <a-entity
