@@ -45,7 +45,7 @@
         <a-asset-item id="chair" src="./assets/chair/chair.glb"></a-asset-item>
         <a-asset-item
           id="fireplace"
-          src="./assets/fireplace/fireplace.glb"
+          src="./assets/fireplace3/fireplace3.glb"
         ></a-asset-item>
         <a-asset-item id="synth" src="./assets/synth/synth.glb"></a-asset-item>
         <a-asset-item
@@ -55,7 +55,7 @@
         <a-asset-item id="pig" src="./assets/pig/pig-bank.glb"></a-asset-item>
         <a-asset-item
           id="bookcase"
-          src="./assets/bookcase/bookcase.glb"
+          src="./assets/bookcase2/bookcase2.glb"
         ></a-asset-item>
         <a-asset-item
           id="mirror"
@@ -66,24 +66,23 @@
           src="./assets/pillar/pillar.glb"
         ></a-asset-item>
 
-        <img id="eye-pic" src="./assets/pictures/eye.jpg" />
         <img id="wood" src="./assets/textures/wood.jpg" />
         <img id="wood-nrm" src="./assets/textures/wood-nrm.jpg" />
         <img id="portrait" src="./assets/pictures/trapped.jpg" />
+        <img id="paper" src="./assets/pictures/paper.png" />
       </a-assets>
 
       <a-sky color="#00004d"></a-sky>
 
       <a-light type="ambient" color="red" intensity="0.5"></a-light>
       <a-light
-        id="spot"
+        id="spot-1"
         type="spot"
         color="red"
         intensity="5"
         position="-4.5 3 2"
         rotation="-45 90 0"
       ></a-light>
-
       <a-plane
         static-body
         id="floor"
@@ -195,61 +194,93 @@
         scale="0.06 0.06 0.06"
         rotation="0 -90 0"
       ></a-gltf-model>
-      <a-plane
-        position="-4.89 2.05 0.9"
+      <a-image
+        src="#paper"
+        position="-4.89 2.05 -0.9"
         rotation="0 90 0"
-        color="purple"
-        width="0.7"
-        height="0.8"
-      ></a-plane>
+        width="0.9"
+      ></a-image>
       <a-text
-        position="-4.88 2.05 0.9"
+        font="https://cdn.aframe.io/fonts/Monoid.fnt"
+        position="-4.88 2.05 -0.9"
         value="In Pleasantville \n we REALLY \n \n \n \n \n see you!"
         width="2"
         align="center"
-        color="white"
+        color="black"
         rotation="0 90 0"
       ></a-text>
       <a-sphere
         id="eye-sphere"
         look-at="#cam"
-        color="white"
+        color="#B6A795"
         radius="0.15"
-        position="-5 2 1"
+        position="-5 2 -1"
       >
         <a-sphere color="black" position="0 0 0.13" radius="0.05"></a-sphere>
       </a-sphere>
       <a-sphere
         id="eye-sphere"
         look-at="#cam"
-        color="white"
+        color="#B6A795"
         radius="0.15"
-        position="-5 2 0.7"
+        position="-5 2 -0.7"
       >
         <a-sphere color="black" position="0 0 0.13" radius="0.05"></a-sphere>
       </a-sphere>
       <a-gltf-model
         static-body
         src="#fireplace"
-        position="0 0 -4.6"
-        scale="0.3 0.3 0.3"
+        position="-1 -2 -2.1"
+        scale="1.5 1.5 1.5"
+        rotation="0 60 0"
       ></a-gltf-model>
+
       <a-gltf-model
         static-body
         src="#synth"
-        position="-4.8 0.3 -1"
-        rotation="0 90 0"
+        position="4.8 0.3 -1"
+        rotation="0 -90 0"
         scale="0.4 0.4 0.4"
       ></a-gltf-model>
       <a-gltf-model
         static-body
         clickable
         src="#bookcase"
-        position="-3.4 0.5 0"
-        rotation="0 -90 0"
-        scale="0.7 0.7 0.7"
+        position="-4.72 0.5 2.5"
+        rotation="0 90 0"
+        scale="0.9 0.9 0.9"
+        
+      >
+      </a-gltf-model>
+      <a-text
+        font="https://cdn.aframe.io/fonts/Monoid.fnt"
+        position="-4.675 2.04 2.5"
+        value="You \n need \n to"
+        width="0.9"
+        align="center"
+        color="white"
+        rotation="0 100 0"
+      ></a-text>
+      <a-text
+        font="https://cdn.aframe.io/fonts/Monoid.fnt"
+        position="-4.7 1.8 2.95"
+        value="CHANGE"
+        width="1.5"
+        align="center"
+        color="white"
+        rotation="-10 180 0"
+        geometry="primitive:plane"
         change-perspective="target: #camera;"
-      ></a-gltf-model>
+      ></a-text>
+      <a-text
+        font="https://cdn.aframe.io/fonts/Monoid.fnt"
+        position="-4.58 1.05 2.19"
+        value="PERSPECTIVE"
+        width="0.8"
+        align="center"
+        color="white"
+        rotation="-10 90 90"
+      ></a-text>
       <a-gltf-model
         static-body
         src="#mirror"
@@ -299,7 +330,7 @@
       <a-entity
         id="camera"
         progressive-controls
-        position="0 0 5"
+        position="0 0 4"
         raycaster="objects: .castable"
       >
         <a-camera id="cam" look-controls="pointerLockEnabled: true"> </a-camera>
