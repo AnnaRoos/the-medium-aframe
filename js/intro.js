@@ -1,3 +1,8 @@
+
+window.addEventListener('load', () => {
+  document.body.classList.remove('loading');
+});
+
 const introMessage = document.querySelector('#intro');
 
 const hideInstructions = () => {
@@ -6,6 +11,4 @@ const hideInstructions = () => {
 
 introMessage.addEventListener('click', hideInstructions);
 
-/* window.addEventListener('load', (event) => {
-  introMessage.style = 'display: block';
-}); */
+

@@ -14,7 +14,7 @@ AFRAME.registerComponent('change-perspective', {
         newLight.setAttribute('id', 'spot-2');
         newLight.setAttribute('type', 'spot');
         newLight.setAttribute('color', 'red');
-        newLight.setAttribute('intensity', '5');
+        newLight.setAttribute('intensity', '20');
         newLight.setAttribute('position', '-3.2 3 -4.5');
         newLight.setAttribute('rotation', '-45 0 0');
         self.el.sceneEl.appendChild(newLight);
@@ -31,6 +31,9 @@ AFRAME.registerComponent('change-perspective', {
 });
 
 AFRAME.registerComponent('fade-away', {
+  schema: {
+    fadein: { type: 'selector', default: '' },
+  },
   init: function () {
     const el = this.el;
     const data = this.data;
@@ -42,6 +45,12 @@ AFRAME.registerComponent('fade-away', {
           to: 0,
           dur: 1500,
         });
+        data.fadein.setAttribute('animation', {
+          property: 'opacity',
+          from: 0,
+          to: 1,
+          dur: 2000,
+        });
         setTimeout(function () {
           const spotlight = document.querySelector('#spot-2');
           el.sceneEl.removeChild(spotlight);
@@ -49,11 +58,11 @@ AFRAME.registerComponent('fade-away', {
           newLight.setAttribute('id', 'spot-3');
           newLight.setAttribute('type', 'spot');
           newLight.setAttribute('color', 'red');
-          newLight.setAttribute('intensity', '5');
+          newLight.setAttribute('intensity', '20');
           newLight.setAttribute('position', '3.2 3 -4.5');
           newLight.setAttribute('rotation', '-45 0 0');
           el.sceneEl.appendChild(newLight);
-        }, 2000);
+        }, 3000);
 
         el.emit('invisible');
       });
@@ -64,6 +73,7 @@ AFRAME.registerComponent('fade-away', {
 AFRAME.registerComponent('fly', {
   schema: {
     target: { type: 'selector', default: '' },
+    fadein: { type: 'selector', default: '' },
   },
 
   update: function (oldData) {
@@ -85,18 +95,28 @@ AFRAME.registerComponent('fly', {
             loop: true,
             easing: 'linear',
           });
-          el.sceneEl.appendChild(flyingPig);
           el.sceneEl.removeChild(data.target);
-          const spotlight = document.querySelector('#spot-3');
-          el.sceneEl.removeChild(spotlight); 
-          const newLight = document.createElement('a-light');
-          newLight.setAttribute('id', 'spot-4');
-          newLight.setAttribute('type', 'spot');
-          newLight.setAttribute('color', 'red');
-          newLight.setAttribute('intensity', '5');
-          newLight.setAttribute('position', '4.5 3 0');
-          newLight.setAttribute('rotation', '-45 -90 0');
-          el.sceneEl.appendChild(newLight);
+          el.sceneEl.appendChild(flyingPig);
+
+          data.fadein.setAttribute('animation', {
+            property: 'opacity',
+            from: 0,
+            to: 1,
+            dur: 2000,
+          });
+
+          setTimeout(function () {
+            const spotlight = document.querySelector('#spot-3');
+            el.sceneEl.removeChild(spotlight);
+            const newLight = document.createElement('a-light');
+            newLight.setAttribute('id', 'spot-4');
+            newLight.setAttribute('type', 'spot');
+            newLight.setAttribute('color', 'red');
+            newLight.setAttribute('intensity', '20');
+            newLight.setAttribute('position', '4.5 3 0');
+            newLight.setAttribute('rotation', '-45 -90 0');
+            el.sceneEl.appendChild(newLight);
+          }, 3000);
           el.emit('flying');
         }
       });

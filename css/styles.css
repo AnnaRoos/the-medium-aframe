@@ -2,6 +2,19 @@ body {
   font-family: fantasy;
 }
 
+body > * {
+  z-index: 1;
+  position: relative;
+  transition: opacity 2000ms;
+  opacity: 1;
+
+}
+
+body.loading > * {
+  opacity: 0;
+}
+
+
 .info-box {
   z-index: 100;
   position: relative;
@@ -12,8 +25,7 @@ body {
   padding: 20px;
   text-align: center;
   border-radius: 10px;
-/*   box-shadow: 2px 2px 2px gray; */
-
+  /*   box-shadow: 2px 2px 2px gray; */
 }
 
 .info-box h1 {
