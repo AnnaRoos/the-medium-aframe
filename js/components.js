@@ -49,7 +49,7 @@ AFRAME.registerComponent('fade-away', {
           property: 'opacity',
           from: 0,
           to: 1,
-          dur: 2000,
+          dur: 3000,
         });
         setTimeout(function () {
           const spotlight = document.querySelector('#spot-2');
@@ -59,10 +59,10 @@ AFRAME.registerComponent('fade-away', {
           newLight.setAttribute('type', 'spot');
           newLight.setAttribute('color', 'red');
           newLight.setAttribute('intensity', '20');
-          newLight.setAttribute('position', '3.2 3 -4.5');
+          newLight.setAttribute('position', '3.5 3.3 -4.5');
           newLight.setAttribute('rotation', '-45 0 0');
           el.sceneEl.appendChild(newLight);
-        }, 3000);
+        }, 5000);
 
         el.emit('invisible');
       });
@@ -116,7 +116,7 @@ AFRAME.registerComponent('fly', {
             newLight.setAttribute('position', '4.5 3 0');
             newLight.setAttribute('rotation', '-45 -90 0');
             el.sceneEl.appendChild(newLight);
-          }, 3000);
+          }, 5000);
           el.emit('flying');
         }
       });
