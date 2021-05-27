@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title>The Medium</title>
-    <meta name="description" content="The Medium" />
+    <meta name="The Medium" content="The Medium" />
     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
     <!--     AFRAME EXTRA -->
     <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
@@ -24,6 +24,19 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body class="loading">
+    <div id="postcard" class="postcard">
+      <div class="message">
+        <p>
+          Alex, I’m getting desperate. Nothing is what it seems here and right
+          now I’m clutching at straws. I’m willing to try anything to get some
+          kind of clue on where you are and what happened to you. I’ve even
+          decided to ask a medium. I know I always made fun of your tarot card
+          sessions and that woman who claimed she could talk to your dead
+          mother. But maybe the mumbo jumbo will make more sense than the
+          reality in this place.
+        </p>
+      </div>
+    </div>
     <div id="intro" class="info-box">
       <h1>Welcome to The Medium!</h1>
       <p>
@@ -44,6 +57,10 @@
       <a-assets>
         <a-asset-item id="table" src="./assets/table/table.glb"></a-asset-item>
         <a-asset-item id="chair" src="./assets/chair/chair.glb"></a-asset-item>
+        <a-asset-item
+          id="medium"
+          src="./assets/medium/medium.glb"
+        ></a-asset-item>
         <a-asset-item
           id="fireplace"
           src="./assets/fireplace3/fireplace3.glb"
@@ -75,7 +92,7 @@
 
       <a-sky color="#00004d"></a-sky>
 
-      <a-light type="ambient" intensity="1.5"></a-light>
+      <a-light type="ambient" intensity="3"></a-light>
       <a-light
         id="spot-1"
         type="spot"
@@ -184,7 +201,7 @@
       <a-gltf-model
         static-body
         src="#table"
-        position="3.5 0.7 0.5"
+        position="3.5 0.8 0.5"
         scale="0.004 0.004 0.004"
         rotation="0 90 0"
       ></a-gltf-model>
@@ -194,6 +211,15 @@
         position="4.5 0.3 0.5"
         scale="0.06 0.06 0.06"
         rotation="0 -90 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        id="the-medium"
+        static-body
+        src="#medium"
+        position="4.5 0.3 0.5"
+        scale="0.01 0.01 0.01"
+        rotation="0 -90 0"
+        visible="false"
       ></a-gltf-model>
       <a-image
         src="#paper"
@@ -356,7 +382,7 @@
         width="0.4"
         depth="0.4"
         position="4 1.35 -4.5"
-        fly="target: #grounded-pig; fadein: #third-truth;"
+        fly="target: #grounded-pig; fadein: #third-truth; show: #the-medium;"
       ></a-box>
       <a-gltf-model
         id="grounded-pig"

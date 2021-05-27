@@ -74,6 +74,7 @@ AFRAME.registerComponent('fly', {
   schema: {
     target: { type: 'selector', default: '' },
     fadein: { type: 'selector', default: '' },
+    show: {type: 'selector', default: ''}
   },
 
   update: function (oldData) {
@@ -116,6 +117,7 @@ AFRAME.registerComponent('fly', {
             newLight.setAttribute('position', '4.5 3 0');
             newLight.setAttribute('rotation', '-45 -90 0');
             el.sceneEl.appendChild(newLight);
+            data.show.object3D.visible = true;
           }, 5000);
           el.emit('flying');
         }
