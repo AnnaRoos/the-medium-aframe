@@ -36,6 +36,10 @@
           reality in this place.
         </p>
       </div>
+      <div class="address">
+        <h1>Level IV</h1>
+        <h2>The Medium</h2>
+      </div>
     </div>
     <div id="intro" class="info-box">
       <h1>Welcome to The Medium!</h1>
@@ -188,6 +192,33 @@
       ></a-box>
       <a-triangle
         position="-5 3 -5"
+        material="color: #423207;
+        side: double;
+        src: #wood;
+        normal-map: #wood-nrm;
+        normal-texture-repeat: 10;
+        repeat: 10;"
+        vertex-a="10 0"
+        vertex-b="0 0"
+        vertex-c="5 5"
+      ></a-triangle>
+      <a-plane
+        static-body
+        id="front-wall"
+        position="0 1.5 5"
+        rotation="0 0 0"
+        width="10"
+        height="3"
+        depth="0.2"
+        material="color: #423207;
+        side: double;
+        src: #wood;
+        normal-map: #wood-nrm;
+        normal-texture-repeat: 10;
+        repeat: 10;"
+      ></a-plane>
+      <a-triangle
+        position="-5 3 5"
         material="color: #423207;
         side: double;
         src: #wood;
