@@ -3,7 +3,6 @@ body > * {
   position: relative;
   transition: opacity 2000ms;
   opacity: 1;
-
 }
 
 body.loading > * {
@@ -13,14 +12,15 @@ body.loading > * {
 .postcard {
   z-index: 100;
   position: absolute;
-  background-image: url("../assets/pictures/postcard.png");
+  background-image: url('../assets/pictures/postcard.png');
+  background-repeat: no-repeat;
+  background-size: contain;
   font-family: 'Courier New', Courier, monospace;
   top: calc(50% - 234px);
   left: calc(50% - 375px);
   width: 750px;
   height: 468px;
-  background-repeat: no-repeat;
-  background-size: contain;
+
   display: flex;
   flex-direction: row;
 }
@@ -33,16 +33,17 @@ body.loading > * {
 
 .info-box {
   z-index: 100;
-  position: relative;
-  background-color: rgb(238, 70, 162);
-  width: 500px;
-  margin: 0 auto;
-  top: 200px;
-  padding: 20px;
+  position: absolute;
+  background-image: url('../assets/pictures/intro-paper.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 375px;
+  height: 597px;
+  top: calc(50% - 310px);
+  left: calc(50% - 200px);
+  padding: 40px 20px 20px 20px;
   text-align: center;
-  border-radius: 10px;
   font-family: fantasy;
-  /*   box-shadow: 2px 2px 2px gray; */
   display: none;
 }
 
