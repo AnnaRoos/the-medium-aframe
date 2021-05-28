@@ -125,3 +125,30 @@ AFRAME.registerComponent('fly', {
     });
   },
 });
+
+
+AFRAME.registerComponent('move-on', {
+  schema: {
+    target: { type: 'selector', default: '' },
+  },
+
+  update: function() {
+    const el = this.el;
+    const data = this.data;
+/*     el.sceneEl.addEventListener('flying', function () { */
+    el.addEventListener('click', function (event) {
+          const tarotCard = document.createElement('a-plane');
+          tarotCard.setAttribute('id', 'tarot');
+          tarotCard.setAttribute('src', '#tarot-1');
+          tarotCard.setAttribute('height', '0.5');
+          tarotCard.setAttribute('width', '0.3');
+          tarotCard.setAttribute('position', '4 1 1');
+          tarotCard.setAttribute('rotation', '-90 -90 0');
+          el.sceneEl.appendChild(tarotCard);
+         
+      });
+/*     }); */
+
+  }
+
+});

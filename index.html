@@ -15,7 +15,7 @@
     <!-- ******** NEW SUPER-HANDS COMPONENT VERSION FOR A-FRAME v1.0.4 ******** -->
     <!-- ******** With v3.0.0 you need to serve progressive-controls yourself ******** -->
     <script src="https://unpkg.com/super-hands@3.0.0/dist/super-hands.min.js"></script>
-    <script src="./js/progressive-controls.js"></script>
+    <script src="./js/progressive-controls.js" defer></script>
     <!-- ******** THE PHYSICS SYSTEM HAS BEEN ORGANISED IN A SPECIFIC COMPONENT (no more aframe-extras) ******** -->
     <!-- ******** You can find out more visiting the repo here: https://github.com/donmccurdy/aframe-physics-system ******** -->
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
@@ -92,6 +92,7 @@
         <img id="wood-nrm" src="./assets/textures/wood-nrm.jpg" />
         <img id="portrait" src="./assets/pictures/trapped.jpg" />
         <img id="paper" src="./assets/pictures/paper-small.png" />
+        <img id="tarot-1" src="./assets/pictures/tarot-3-1.jpg" />
       </a-assets>
 
       <a-sky color="#00004d"></a-sky>
@@ -250,7 +251,8 @@
         position="4.5 0.3 0.5"
         scale="0.01 0.01 0.01"
         rotation="0 -90 0"
-        visible="false"
+        visible="true"
+        move-on
       ></a-gltf-model>
       <a-image
         src="#paper"
