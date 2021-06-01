@@ -34,7 +34,7 @@ AFRAME.registerComponent('fade-away', {
   schema: {
     fadein: { type: 'selector', default: '' },
   },
-  init: function () {
+  update: function () {
     const el = this.el;
     const data = this.data;
     el.sceneEl.addEventListener('perspective', function () {
@@ -74,7 +74,9 @@ AFRAME.registerComponent('fly', {
   schema: {
     target: { type: 'selector', default: '' },
     fadein: { type: 'selector', default: '' },
-    show: {type: 'selector', default: ''}
+    medium: { type: 'selector', default: '' },
+    speech: { type: 'selector', default: '' },
+    text: { type: 'selector', default: '' },
   },
 
   update: function (oldData) {
@@ -117,7 +119,9 @@ AFRAME.registerComponent('fly', {
             newLight.setAttribute('position', '4.5 3 0');
             newLight.setAttribute('rotation', '-45 -90 0');
             el.sceneEl.appendChild(newLight);
-            data.show.object3D.visible = true;
+            data.medium.object3D.visible = true;
+            data.speech.object3D.visible = true;
+            data.text.object3D.visible = true;
           }, 5000);
           el.emit('flying');
         }
@@ -126,29 +130,48 @@ AFRAME.registerComponent('fly', {
   },
 });
 
-
-AFRAME.registerComponent('move-on', {
+AFRAME.registerComponent('tarot', {
   schema: {
-    target: { type: 'selector', default: '' },
+    text1: { type: 'selector', default: '' },
+    text2: { type: 'selector', default: '' },
   },
 
-  update: function() {
+  update: function () {
     const el = this.el;
     const data = this.data;
-/*     el.sceneEl.addEventListener('flying', function () { */
+    /*     el.sceneEl.addEventListener('flying', function () { */
     el.addEventListener('click', function (event) {
-          const tarotCard = document.createElement('a-plane');
-          tarotCard.setAttribute('id', 'tarot');
-          tarotCard.setAttribute('src', '#tarot-1');
-          tarotCard.setAttribute('height', '0.5');
-          tarotCard.setAttribute('width', '0.3');
-          tarotCard.setAttribute('position', '4 1 1');
-          tarotCard.setAttribute('rotation', '-90 -90 0');
-          el.sceneEl.appendChild(tarotCard);
-         
-      });
-/*     }); */
+      const tarotCard1 = document.createElement('a-plane');
+      tarotCard1.setAttribute('id', 'tarotcard-1');
+      tarotCard1.setAttribute('src', '#tarot-1');
+      tarotCard1.setAttribute('height', '0.5');
+      tarotCard1.setAttribute('width', '0.3');
+      tarotCard1.setAttribute('position', '4 1 0');
+      tarotCard1.setAttribute('rotation', '-90 -90 0');
+      el.sceneEl.appendChild(tarotCard1);
 
-  }
+      const tarotCard2 = document.createElement('a-plane');
+      tarotCard2.setAttribute('id', 'tarotcard-2');
+      tarotCard2.setAttribute('src', '#tarot-2');
+      tarotCard2.setAttribute('height', '0.5');
+      tarotCard2.setAttribute('width', '0.3');
+      tarotCard2.setAttribute('position', '4 1 0.5');
+      tarotCard2.setAttribute('rotation', '-90 -90 0');
+      el.sceneEl.appendChild(tarotCard2);
 
+      const tarotCard3 = document.createElement('a-plane');
+      tarotCard3.setAttribute('id', 'tarotcard-3');
+      tarotCard3.setAttribute('src', '#tarot-3');
+      tarotCard3.setAttribute('height', '0.5');
+      tarotCard3.setAttribute('width', '0.3');
+      tarotCard3.setAttribute('position', '4 1 1');
+      tarotCard3.setAttribute('rotation', '-90 -90 0');
+      el.sceneEl.appendChild(tarotCard3);
+
+      data.text1.object3D.visible = false;
+      data.text2.object3D.visible = true;
+    });
+    /*     }); */
+  },
 });
+
