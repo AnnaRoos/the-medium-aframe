@@ -1,6 +1,7 @@
 AFRAME.registerComponent('change-perspective', {
   schema: {
     target: { type: 'selector', default: '' },
+    text: { type: 'selector', default: '' },
   },
   init: function () {
     var self = this;
@@ -18,6 +19,10 @@ AFRAME.registerComponent('change-perspective', {
         newLight.setAttribute('position', '-3.2 3 -4.5');
         newLight.setAttribute('rotation', '-45 0 0');
         self.el.sceneEl.appendChild(newLight);
+        self.data.text.setAttribute(
+          'value',
+          'Follow the light! \n Second task: Invisible.'
+        );
       } else if (self.data.target.object3D.position.y === 0) {
         self.data.target.object3D.position.y -= 1.2;
       }
@@ -33,6 +38,7 @@ AFRAME.registerComponent('change-perspective', {
 AFRAME.registerComponent('fade-away', {
   schema: {
     fadein: { type: 'selector', default: '' },
+    text: { type: 'selector', default: '' },
   },
   update: function () {
     const el = this.el;
@@ -62,6 +68,10 @@ AFRAME.registerComponent('fade-away', {
           newLight.setAttribute('position', '3.5 3.3 -4.5');
           newLight.setAttribute('rotation', '-45 0 0');
           el.sceneEl.appendChild(newLight);
+          data.text.setAttribute(
+            'value',
+            'Follow the light! \n Third task: Can pigs fly?'
+          );
         }, 5000);
 
         el.emit('invisible');
@@ -76,6 +86,7 @@ AFRAME.registerComponent('fly', {
     fadein: { type: 'selector', default: '' },
     medium: { type: 'selector', default: '' },
     speech: { type: 'selector', default: '' },
+    speechText: { type: 'selector', default: '' },
     text: { type: 'selector', default: '' },
   },
 
@@ -121,7 +132,11 @@ AFRAME.registerComponent('fly', {
             el.sceneEl.appendChild(newLight);
             data.medium.object3D.visible = true;
             data.speech.object3D.visible = true;
-            data.text.object3D.visible = true;
+            data.speechText.object3D.visible = true;
+            data.text.setAttribute(
+              'value',
+              'Follow the light! \n The Medium will see you now!'
+            );
           }, 5000);
           el.emit('flying');
         }
@@ -135,7 +150,6 @@ AFRAME.registerComponent('tarot', {
     text1: { type: 'selector', default: '' },
     text2: { type: 'selector', default: '' },
   },
-
   update: function () {
     const el = this.el;
     const data = this.data;
@@ -175,3 +189,17 @@ AFRAME.registerComponent('tarot', {
   },
 });
 
+AFRAME.registerComponent('camera-text', {
+  schema: {
+    text: { type: 'selector', default: '' },
+  },
+  update: function () {
+    const el = this.el;
+    const data = this.data;
+    el.sceneEl.addEventListener('loaded', function () {
+      setTimeout(function () {
+        el.object3D.visible = true;
+      }, 5000);
+    });
+  },
+});

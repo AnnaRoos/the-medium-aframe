@@ -269,7 +269,7 @@
         id="speech-text-1"
         font="https://cdn.aframe.io/fonts/Monoid.fnt"
         position="4.19 2.15 1"
-        value="Woah, those Truths were harsch! The spirits are not so good at sugarcoating things. But now it's time to move on."
+        value="Whoa, those Truths were harsh! The spirits are not so good at sugarcoating things... But now it's time to move on."
         wrap-count="20"
         width="0.8"
         align="left"
@@ -371,7 +371,7 @@
                              loop: true;
                              dir: alternate;
                              dur: 1500"
-        change-perspective="target: #camera;"
+        change-perspective="target: #camera; text: #cam-text;"
       ></a-entity>
       <a-text
         font="https://cdn.aframe.io/fonts/Monoid.fnt"
@@ -400,7 +400,7 @@
                              loop: true;
                              dir: alternate;
                              dur: 1500"
-        change-perspective="target: #camera;"
+        change-perspective="target: #camera; text: #cam-text;"
       ></a-entity>
       <a-gltf-model
         static-body
@@ -415,7 +415,7 @@
         position="-3 1.5 -4.88"
         height="0.9"
         width="0.5"
-        fade-away="fadein: #second-truth"
+        fade-away="fadein: #second-truth; text: #cam-text;"
       ></a-image>
       <a-text
         id="second-truth"
@@ -455,7 +455,8 @@
         fadein: #third-truth; 
         medium: #the-medium; 
         speech: #speech; 
-        text: #speech-text-1;"
+        speechText: #speech-text-1;
+        text: #cam-text;"
       ></a-box>
       <a-gltf-model
         id="grounded-pig"
@@ -481,10 +482,22 @@
       <a-entity
         id="camera"
         progressive-controls
-        position="0 0 4"
+        position="0 0 3"
         raycaster="objects: .castable"
       >
-        <a-camera id="cam" look-controls="pointerLockEnabled: true"> </a-camera>
+        <a-camera id="cam" look-controls="pointerLockEnabled: true">
+          <a-text
+            id="cam-text"
+            font="https://cdn.aframe.io/fonts/Monoid.fnt"
+            value="Follow the light!
+            First task: Change perspective."
+            color="white"
+            position="-0.15 -0.07 -0.1"
+            width="0.1"
+            visible="false"
+            camera-text
+          ></a-text>
+        </a-camera>
       </a-entity>
     </a-scene>
   </body>
