@@ -1,10 +1,29 @@
+AFRAME.registerComponent('camera-text', {
+  schema: {
+    target: { type: 'selector', default: '' },
+  },
+  init: function () {
+    const el = this.el;
+    const data = this.data;
+    this.showText = function () {
+      data.target.object3D.visible = true;
+      el.removeAttribute('camera-text');
+    };
+
+    el.addEventListener('click', this.showText);
+  },
+  remove: function () {
+    this.el.removeEventListener('click', this.showText);
+  },
+});
+
 AFRAME.registerComponent('change-perspective', {
   schema: {
     target: { type: 'selector', default: '' },
     text: { type: 'selector', default: '' },
   },
   init: function () {
-    var self = this;
+    const self = this;
     this.eventHandlerFn = function () {
       if (self.data.target.object3D.position.y < 0) {
         self.data.target.object3D.position.y += 1.2;
@@ -186,20 +205,5 @@ AFRAME.registerComponent('tarot', {
       data.text2.object3D.visible = true;
     });
     /*     }); */
-  },
-});
-
-AFRAME.registerComponent('camera-text', {
-  schema: {
-    text: { type: 'selector', default: '' },
-  },
-  update: function () {
-    const el = this.el;
-    const data = this.data;
-    el.sceneEl.addEventListener('loaded', function () {
-      setTimeout(function () {
-        el.object3D.visible = true;
-      }, 5000);
-    });
   },
 });
