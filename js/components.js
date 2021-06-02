@@ -40,7 +40,7 @@ AFRAME.registerComponent('change-perspective', {
         self.el.sceneEl.appendChild(newLight);
         self.data.text.setAttribute(
           'value',
-          'Follow the light! \n Second task: Invisible.'
+          'Follow the light! \n II: Invisible.'
         );
       } else if (self.data.target.object3D.position.y === 0) {
         self.data.target.object3D.position.y -= 1.2;
@@ -89,7 +89,7 @@ AFRAME.registerComponent('fade-away', {
           el.sceneEl.appendChild(newLight);
           data.text.setAttribute(
             'value',
-            'Follow the light! \n Third task: Can pigs fly?'
+            'Follow the light! \n III: Can pigs fly?'
           );
         }, 5000);
 
@@ -168,7 +168,7 @@ AFRAME.registerComponent('tarot', {
   schema: {
     message1: { type: 'selector', default: '' },
     message2: { type: 'selector', default: '' },
-    text: {type: 'selector', default: ''}
+    text: { type: 'selector', default: '' },
   },
   update: function () {
     const el = this.el;
@@ -208,6 +208,11 @@ AFRAME.registerComponent('tarot', {
       qrCode.setAttribute('scale', '0.4 0.4 0.4');
       qrCode.setAttribute('position', '4.19 2 1.4');
       qrCode.setAttribute('rotation', '0 90 0');
+      qrCode.setAttribute('flip-card', {
+        card1: '#tarotcard-1',
+        card2: '#tarotcard-2',
+        card3: '#tarotcard-3',
+      });
       el.sceneEl.appendChild(qrCode);
 
       data.message1.object3D.visible = false;
@@ -219,4 +224,36 @@ AFRAME.registerComponent('tarot', {
     });
     /*     }); */
   },
+});
+
+AFRAME.registerComponent('flip-card', {
+  schema: {
+    card1: { type: 'selector', default: '' },
+    card2: { type: 'selector', default: '' },
+    card3: { type: 'selector', default: '' },
+    marker1: { type: 'selector', default: '#marker-1' },
+    marker2: { type: 'selector', default: '#marker-2' },
+    marker3: { type: 'selector', default: '#marker-3' },
+  },
+  update: function () {
+    const el = this.el;
+    const data = this.data;
+
+    data.card1.addEventListener('click', function () {
+      console.log('i was flipped');
+      /*       data.marker1.object3D.visible = true; */
+      data.card1.object3D.visible = false;
+      data.card2.addEventListener('click', function () {
+        console.log('i was flipped');
+        /*         data.marker2.object3D.visible = true; */
+        data.card2.object3D.visible = false;
+        data.card3.addEventListener('click', function () {
+          console.log('i was flipped');
+          /*           data.marker3.object3D.visible = true; */
+          data.card3.object3D.visible = false;
+        });
+      });
+    });
+  },
+  remove: function () {},
 });
