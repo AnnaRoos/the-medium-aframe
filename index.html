@@ -93,10 +93,11 @@
         <img id="wood-nrm" src="./assets/textures/wood-nrm.jpg" />
         <img id="portrait" src="./assets/pictures/trapped.jpg" />
         <img id="paper" src="./assets/pictures/paper-small.png" />
-        <img id="tarot-1" src="./assets/pictures/tarot-3-1.jpg" />
-        <img id="tarot-2" src="./assets/pictures/tarot-3-2.jpg" />
-        <img id="tarot-3" src="./assets/pictures/tarot-3-3.jpg" />
+        <img id="tarot-1" src="./assets/tarot/tarot-3-1.jpg" />
+        <img id="tarot-2" src="./assets/tarot/tarot-3-2.jpg" />
+        <img id="tarot-3" src="./assets/tarot/tarot-3-3.jpg" />
         <img id="speechbubble" src="./assets/pictures/speech.png" />
+        <img id="qr" src="assets/tarot/frame.png" />
       </a-assets>
 
       <a-sky color="#00004d"></a-sky>
@@ -255,15 +256,15 @@
         position="4.5 0.3 0.5"
         scale="0.01 0.01 0.01"
         rotation="0 -90 0"
-        visible="false"
+        visible="true"
       ></a-gltf-model>
       <a-image
         id="speech"
         src="#speechbubble"
         position="4.2 2. 1.4"
         rotation="0 -90 0"
-        visible="false"
-        tarot="text1: #speech-text-1; text2: #speech-text-2;"
+        visible="true"
+        tarot="message1: #speech-text-1; message2: #speech-text-2; text: #cam-text;"
       >
       </a-image>
       <a-text
@@ -281,7 +282,7 @@
       <a-text
         id="speech-text-2"
         font="https://cdn.aframe.io/fonts/Monoid.fnt"
-        position="4.19 2.15 1"
+        position="4.19 2.3 1"
         value="These cards will help you."
         wrap-count="20"
         width="0.8"
@@ -480,13 +481,9 @@
         width="2.2"
         opacity="0"
       ></a-text>
-      <a-entity
-        id="camera"
-        progressive-controls
-        position="0 0 3"
-        raycaster="objects: .castable"
-      >
+      <a-entity id="camera" progressive-controls position="0 0 3">
         <a-camera id="cam" look-controls="pointerLockEnabled: true">
+
           <a-text
             id="cam-text"
             font="https://cdn.aframe.io/fonts/Monoid.fnt"

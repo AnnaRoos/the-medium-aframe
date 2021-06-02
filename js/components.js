@@ -166,8 +166,9 @@ AFRAME.registerComponent('fly', {
 
 AFRAME.registerComponent('tarot', {
   schema: {
-    text1: { type: 'selector', default: '' },
-    text2: { type: 'selector', default: '' },
+    message1: { type: 'selector', default: '' },
+    message2: { type: 'selector', default: '' },
+    text: {type: 'selector', default: ''}
   },
   update: function () {
     const el = this.el;
@@ -201,8 +202,20 @@ AFRAME.registerComponent('tarot', {
       tarotCard3.setAttribute('rotation', '-90 -90 0');
       el.sceneEl.appendChild(tarotCard3);
 
-      data.text1.object3D.visible = false;
-      data.text2.object3D.visible = true;
+      const qrCode = document.createElement('a-image');
+      qrCode.setAttribute('id', 'qr-code');
+      qrCode.setAttribute('src', '#qr');
+      qrCode.setAttribute('scale', '0.4 0.4 0.4');
+      qrCode.setAttribute('position', '4.19 2 1.4');
+      qrCode.setAttribute('rotation', '0 90 0');
+      el.sceneEl.appendChild(qrCode);
+
+      data.message1.object3D.visible = false;
+      data.message2.object3D.visible = true;
+      data.text.setAttribute(
+        'value',
+        'Scan the code and click the cards. \n Have a pleasant trip!'
+      );
     });
     /*     }); */
   },

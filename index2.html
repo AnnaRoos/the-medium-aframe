@@ -81,3 +81,22 @@
     </a-scene>
   </body>
 </html>
+        event-set__enter="_event: mouseenter; _target: #cursor; material.opacity: 1;"
+        event-set__leave="_event: mouseleave; _target: #cursor; material.opacity: 0;"
+
+                  <a-cursor
+
+          >
+            <a-entity
+              id="cursor"
+              position="0.5 0 0"
+              geometry="primitive: ring; radius-inner: 0.02; radius-outer: 0.04;"
+              animation="property: material.color;
+                             from: #FF0000;
+                             to: #FFFF00;
+                             loop: true;
+                             dir: alternate;
+                             dur: 1500"
+              material="opacity: 1;"
+            ></a-entity> 
+          </a-cursor>
