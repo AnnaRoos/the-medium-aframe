@@ -240,20 +240,16 @@ AFRAME.registerComponent('flip-card', {
     const data = this.data;
 
     data.card1.addEventListener('click', function () {
-      console.log('i was flipped');
       /*       data.marker1.object3D.visible = true; */
       data.card1.object3D.visible = false;
       data.card2.addEventListener('click', function () {
-        console.log('i was flipped');
         /*         data.marker2.object3D.visible = true; */
         data.card2.object3D.visible = false;
         data.card3.addEventListener('click', function () {
-          console.log('i was flipped');
           /*           data.marker3.object3D.visible = true; */
           data.card3.object3D.visible = false;
         });
       });
     });
   },
-  remove: function () {},
 });
