@@ -89,7 +89,7 @@ AFRAME.registerComponent('fade-away', {
           el.sceneEl.appendChild(newLight);
           data.text.setAttribute(
             'value',
-            'Follow the light! \n III: Can pigs fly?'
+            'Follow the light! \n III: When pigs fly.'
           );
         }, 5000);
 
