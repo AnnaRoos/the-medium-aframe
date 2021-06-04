@@ -253,3 +253,4 @@ AFRAME.registerComponent('flip-card', {
     });
   },
 });
+

@@ -93,14 +93,21 @@
         <img id="wood-nrm" src="./assets/textures/wood-nrm.jpg" />
         <img id="portrait" src="./assets/pictures/trapped.jpg" />
         <img id="paper" src="./assets/pictures/paper-small.png" />
-        <img id="tarot-1" src="./assets/tarot/tarot-3-1.jpg" />
-        <img id="tarot-2" src="./assets/tarot/tarot-3-2.jpg" />
-        <img id="tarot-3" src="./assets/tarot/tarot-3-3.jpg" />
+        <img id="tarot-1" src="./assets/tarot/tarot-5-3.jpg" />
+        <img id="tarot-2" src="./assets/tarot/tarot-3-1.jpg" />
+        <img id="tarot-3" src="./assets/tarot/tarot-3-2.jpg" />
+        <img id="tarot-marker-1" src="./assets/tarot/tarot-star-marker.jpg" />
+        <img id="tarot-marker-2" src="./assets/tarot/tarot-eye-marker.jpg" />
+        <img
+          id="tarot-marker-3"
+          src="./assets/tarot/tarot-necklace-marker.jpg"
+        />
         <img id="speechbubble" src="./assets/pictures/speech.png" />
         <img id="qr" src="assets/tarot/frame.png" />
+        <img id="sunny-field" src="assets/pictures/sunny-field.jpg" />
       </a-assets>
 
-      <a-sky color="#00004d"></a-sky>
+      <a-sky src="#sunny-field"></a-sky>
 
       <a-light type="ambient" intensity="3"></a-light>
       <a-light
@@ -235,62 +242,6 @@
         vertex-b="0 0"
         vertex-c="5 5"
       ></a-triangle>
-      <a-gltf-model
-        static-body
-        src="#table"
-        position="3.5 0.8 0.5"
-        scale="0.004 0.004 0.004"
-        rotation="0 90 0"
-      ></a-gltf-model>
-      <a-gltf-model
-        static-body
-        src="#chair"
-        position="4.5 0.3 0.5"
-        scale="0.06 0.06 0.06"
-        rotation="0 -90 0"
-      ></a-gltf-model>
-      <a-gltf-model
-        id="the-medium"
-        static-body
-        src="#medium"
-        position="4.5 0.3 0.5"
-        scale="0.01 0.01 0.01"
-        rotation="0 -90 0"
-        visible="false"
-      ></a-gltf-model>
-      <a-image
-        id="speech"
-        src="#speechbubble"
-        position="4.2 2. 1.4"
-        rotation="0 -90 0"
-        visible="false"
-        tarot="message1: #speech-text-1; message2: #speech-text-2; text: #cam-text;"
-      >
-      </a-image>
-      <a-text
-        id="speech-text-1"
-        font="https://cdn.aframe.io/fonts/Monoid.fnt"
-        position="4.19 2.15 1"
-        value="Whoa, those Truths were harsh! The spirits are not so good at sugarcoating things... But now it's time to move on."
-        wrap-count="20"
-        width="0.8"
-        align="left"
-        color="black"
-        rotation="0 -90 0"
-        visible="false"
-      ></a-text>
-      <a-text
-        id="speech-text-2"
-        font="https://cdn.aframe.io/fonts/Monoid.fnt"
-        position="4.19 2.3 1"
-        value="These cards will help you."
-        wrap-count="20"
-        width="0.8"
-        align="left"
-        color="black"
-        rotation="0 -90 0"
-        visible="false"
-      ></a-text>
 
       <a-image
         src="#paper"
@@ -482,9 +433,96 @@
         width="2.2"
         opacity="0"
       ></a-text>
+
+      <a-gltf-model
+        static-body
+        src="#table"
+        position="3.5 0.8 0.5"
+        scale="0.004 0.004 0.004"
+        rotation="0 90 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        static-body
+        src="#chair"
+        position="4.5 0.3 0.5"
+        scale="0.06 0.06 0.06"
+        rotation="0 -90 0"
+      ></a-gltf-model>
+      <a-gltf-model
+        id="the-medium"
+        static-body
+        src="#medium"
+        position="4.5 0.3 0.5"
+        scale="0.01 0.01 0.01"
+        rotation="0 -90 0"
+        visible="false"
+      ></a-gltf-model>
+      <a-image
+        id="speech"
+        src="#speechbubble"
+        position="4.2 2. 1.4"
+        rotation="0 -90 0"
+        visible="false"
+        tarot="message1: #speech-text-1; message2: #speech-text-2; text: #cam-text;"
+      >
+      </a-image>
+      <a-text
+        id="speech-text-1"
+        font="https://cdn.aframe.io/fonts/Monoid.fnt"
+        position="4.19 2.15 1"
+        value="Whoa, those Truths were harsh! The spirits are not so good at sugarcoating things... But now it's time to move on.              ->"
+        wrap-count="20"
+        width="0.8"
+        align="left"
+        color="black"
+        rotation="0 -90 0"
+        visible="false"
+      ></a-text>
+      <a-text
+        id="speech-text-2"
+        font="https://cdn.aframe.io/fonts/Monoid.fnt"
+        position="4.19 2.3 1"
+        value="These cards will help you."
+        wrap-count="20"
+        width="0.8"
+        align="left"
+        color="black"
+        rotation="0 -90 0"
+        visible="false"
+      ></a-text>
+      <a-image
+        id="#marker-1"
+        src="#tarot-marker-1"
+        width="1.5"
+        height="2.5"
+        position="3.5 1.5 4.9"
+        rotation="0 180 0"
+        visible="true"
+      >
+      </a-image>
+      <a-image
+        id="#marker-2"
+        src="#tarot-marker-2"
+        width="1.5"
+        height="2.5"
+        position="0 1.5 4.9"
+        rotation="0 180 0"
+        visible="true"
+      >
+      </a-image>
+      <a-image
+        id="#marker-3"
+        src="#tarot-marker-3"
+        width="1.5"
+        height="2.5"
+        position="-3.5 1.5 4.9"
+        rotation="0 180 0"
+        visible="true"
+      >
+      </a-image>
+
       <a-entity id="camera" progressive-controls position="0 0 3">
         <a-camera id="cam" look-controls="pointerLockEnabled: true">
-
           <a-text
             id="cam-text"
             font="https://cdn.aframe.io/fonts/Monoid.fnt"
