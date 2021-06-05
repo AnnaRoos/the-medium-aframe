@@ -212,6 +212,11 @@ AFRAME.registerComponent('tarot', {
         card1: '#tarotcard-1',
         card2: '#tarotcard-2',
         card3: '#tarotcard-3',
+        marker1: '#marker-1',
+        marker2: '#marker-2',
+        marker3: '#marker-3',
+        camRig: '#camera-rig'
+
       });
       el.sceneEl.appendChild(qrCode);
 
@@ -231,9 +236,10 @@ AFRAME.registerComponent('flip-card', {
     card1: { type: 'selector', default: '' },
     card2: { type: 'selector', default: '' },
     card3: { type: 'selector', default: '' },
-    marker1: { type: 'selector', default: '#marker-1' },
-    marker2: { type: 'selector', default: '#marker-2' },
-    marker3: { type: 'selector', default: '#marker-3' },
+    marker1: { type: 'selector', default: '' },
+    marker2: { type: 'selector', default: '' },
+    marker3: { type: 'selector', default: '' },
+    camRig: {type: 'selector', default: ''}
   },
   update: function () {
     const el = this.el;
@@ -248,6 +254,9 @@ AFRAME.registerComponent('flip-card', {
         data.card3.addEventListener('click', function () {
           /*           data.marker3.object3D.visible = true; */
           data.card3.object3D.visible = false;
+          data.camRig.setAttribute(
+            'movement-controls', {constrainToNavMesh: false}
+          );
         });
       });
     });

@@ -69,6 +69,10 @@
           id="nav-mesh-1"
           src="./assets/nav-mesh/navmesh.gltf"
         ></a-asset-item>
+                <a-asset-item
+          id="nav-mesh-2"
+          src="./assets/nav-mesh/navmesh-2.gltf"
+        ></a-asset-item>
         <a-asset-item id="table" src="./assets/table/table.glb"></a-asset-item>
         <a-asset-item id="chair" src="./assets/chair/chair.glb"></a-asset-item>
         <a-asset-item
@@ -137,12 +141,13 @@
         color="black"
         shadow
       ></a-plane>
-      <a-entity
-        gltf-model="#nav-mesh-1"
+      <a-gltf-model
+      id="nav-mesh"
+        src="#nav-mesh-1"
         position="0 -0.1 0"
         visible="false"
         nav-mesh
-      ></a-entity>
+      ></a-gltf-model>
       <a-box
         static-body
         id="roof-right"
@@ -542,7 +547,12 @@
         movement-controls="constrainToNavMesh: true"
         position="0 0 3"
       >
-        <a-entity id="camera" camera position="0 1.6 0" look-controls="pointerLockEnabled: true" >
+        <a-entity
+          id="camera"
+          camera
+          position="0 1.6 0"
+          look-controls="pointerLockEnabled: true"
+        >
           <a-text
             id="cam-text"
             font="https://cdn.aframe.io/fonts/Monoid.fnt"
