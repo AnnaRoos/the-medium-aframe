@@ -19,6 +19,9 @@
     <!-- ******** THE PHYSICS SYSTEM HAS BEEN ORGANISED IN A SPECIFIC COMPONENT (no more aframe-extras) ******** -->
     <!-- ******** You can find out more visiting the repo here: https://github.com/donmccurdy/aframe-physics-system ******** -->
     <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <!--  NAV MESH -->
+    <script src="https://recast-api.donmccurdy.com/aframe-inspector-plugin-recast.js"></script>
+
     <script src="./js/components.js" defer></script>
     <script src="./js/intro.js" defer></script>
     <link rel="stylesheet" href="./css/styles.css" />
@@ -52,14 +55,20 @@
         <strong>Follow the light to enlightenment!</strong>
       </p>
     </div>
+
     <a-scene
       physics="gravity: -9.8; restitution: 0.7;"
       vr-mode-ui="enabled: false"
       light="defaultLightsEnabled: false"
       renderer="physicallyCorrectLights: true"
+      inspector-plugin-recast
       camera-text="target: #cam-text;"
     >
       <a-assets>
+        <a-asset-item
+          id="nav-mesh-1"
+          src="./assets/nav-mesh/navmesh.gltf"
+        ></a-asset-item>
         <a-asset-item id="table" src="./assets/table/table.glb"></a-asset-item>
         <a-asset-item id="chair" src="./assets/chair/chair.glb"></a-asset-item>
         <a-asset-item
@@ -128,6 +137,12 @@
         color="black"
         shadow
       ></a-plane>
+      <a-entity
+        gltf-model="#nav-mesh-1"
+        position="0 -0.1 0"
+        visible="false"
+        nav-mesh
+      ></a-entity>
       <a-box
         static-body
         id="roof-right"
@@ -260,7 +275,7 @@
       ></a-text>
       <a-sphere
         id="eye-sphere-1"
-        look-at="#cam"
+        look-at="#camera"
         color="#B6A795"
         radius="0.15"
         position="-5 2 -1"
@@ -269,7 +284,7 @@
       </a-sphere>
       <a-sphere
         id="eye-sphere-2"
-        look-at="#cam"
+        look-at="#camera"
         color="#B6A795"
         radius="0.15"
         position="-5 2 -0.7"
@@ -324,7 +339,7 @@
                              loop: true;
                              dir: alternate;
                              dur: 1500"
-        change-perspective="target: #camera; text: #cam-text;"
+        change-perspective="target: #camera-rig; text: #cam-text;"
       ></a-entity>
       <a-text
         font="https://cdn.aframe.io/fonts/Monoid.fnt"
@@ -353,7 +368,7 @@
                              loop: true;
                              dir: alternate;
                              dur: 1500"
-        change-perspective="target: #camera; text: #cam-text;"
+        change-perspective="target: #camera-rig; text: #cam-text;"
       ></a-entity>
       <a-gltf-model
         static-body
@@ -521,8 +536,13 @@
       >
       </a-image>
 
-      <a-entity id="camera" progressive-controls position="0 0 3">
-        <a-camera id="cam" look-controls="pointerLockEnabled: true">
+      <a-entity
+        id="camera-rig"
+        progressive-controls
+        movement-controls="constrainToNavMesh: true"
+        position="0 0 3"
+      >
+        <a-entity id="camera" camera position="0 1.6 0" look-controls="pointerLockEnabled: true" >
           <a-text
             id="cam-text"
             font="https://cdn.aframe.io/fonts/Monoid.fnt"
@@ -533,7 +553,7 @@
             width="0.1"
             visible="false"
           ></a-text>
-        </a-camera>
+        </a-entity>
       </a-entity>
     </a-scene>
   </body>
