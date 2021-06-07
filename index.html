@@ -69,7 +69,7 @@
           id="nav-mesh-1"
           src="./assets/nav-mesh/navmesh.gltf"
         ></a-asset-item>
-                <a-asset-item
+        <a-asset-item
           id="nav-mesh-2"
           src="./assets/nav-mesh/navmesh-2.gltf"
         ></a-asset-item>
@@ -104,8 +104,9 @@
 
         <img id="wood" src="./assets/textures/wood.jpg" />
         <img id="wood-nrm" src="./assets/textures/wood-nrm.jpg" />
-        <img id="portrait" src="./assets/pictures/trapped.jpg" />
+        <img id="portrait" src="./assets/pictures/silhouette.jpg" />
         <img id="paper" src="./assets/pictures/paper-small.png" />
+        <img id="intro-paper" src="./assets/pictures/intro-paper.png" />
         <img id="tarot-1" src="./assets/tarot/tarot-5-3.jpg" />
         <img id="tarot-2" src="./assets/tarot/tarot-3-1.jpg" />
         <img id="tarot-3" src="./assets/tarot/tarot-3-2.jpg" />
@@ -122,7 +123,7 @@
 
       <a-sky src="#sunny-field"></a-sky>
 
-      <a-light type="ambient" intensity="3"></a-light>
+      <a-light type="ambient" intensity="1"></a-light>
       <a-light
         id="spot-1"
         type="spot"
@@ -142,7 +143,7 @@
         shadow
       ></a-plane>
       <a-gltf-model
-      id="nav-mesh"
+        id="nav-mesh"
         src="#nav-mesh-1"
         position="0 -0.1 0"
         visible="false"
@@ -511,34 +512,57 @@
         visible="false"
       ></a-text>
       <a-image
-        id="#marker-1"
+        id="marker-1"
         src="#tarot-marker-1"
         width="1.5"
         height="2.5"
         position="3.5 1.5 4.9"
         rotation="0 180 0"
-        visible="true"
+        visible="false"
       >
       </a-image>
       <a-image
-        id="#marker-2"
+        id="marker-2"
         src="#tarot-marker-2"
         width="1.5"
         height="2.5"
         position="0 1.5 4.9"
         rotation="0 180 0"
-        visible="true"
+        visible="false"
       >
       </a-image>
       <a-image
-        id="#marker-3"
+        id="marker-3"
         src="#tarot-marker-3"
         width="1.5"
         height="2.5"
         position="-3.5 1.5 4.9"
         rotation="0 180 0"
-        visible="true"
+        visible="false"
       >
+      </a-image>
+      <a-image
+        id="end-message"
+        src="#intro-paper"
+        width="2"
+        height="3"
+        position="0 1 10"
+        rotation="0 0 0"
+        side="double"
+      >
+        <a-text
+        font="https://cdn.aframe.io/fonts/Monoid.fnt"
+        position="0 0 -0.2"
+        value="Ok, this might not have been what you wanted to find out. 
+        You should have paid me the bitcoins and continued to live in denial. 
+        But you didn't and here you are. Now it's time to get out. 
+        Beware of the policecars."
+        wrap-count="25"
+        width="1.5"
+        align="center"
+        color="black"
+        rotation="0 180 0"
+        > </a-text>
       </a-image>
 
       <a-entity
@@ -559,7 +583,7 @@
             value="Follow the light!
             I: Change perspective."
             color="white"
-            position="-0.15 -0.07 -0.1"
+            position="-0.12 -0.07 -0.1"
             width="0.1"
             visible="false"
           ></a-text>
