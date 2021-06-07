@@ -18,4 +18,11 @@ const hideInstructions = () => {
 postcard.addEventListener('click', hidePostcard);
 introMessage.addEventListener('click', hideInstructions);
 
-
+  const play = () => {
+    window.removeEventListener('click', play);
+    window.removeEventListener('touchstart', play);
+    document
+      .querySelector('a-sound').components.sound.playSound();
+  };
+  window.addEventListener('click', play);
+  window.addEventListener('touchstart', play);

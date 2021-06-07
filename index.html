@@ -88,7 +88,10 @@
           id="chandelier"
           src="./assets/models/chandelier.glb"
         ></a-asset-item>
-        <a-asset-item id="pig" src="./assets/models/pig-bank.glb"></a-asset-item>
+        <a-asset-item
+          id="pig"
+          src="./assets/models/pig-bank.glb"
+        ></a-asset-item>
         <a-asset-item
           id="bookcase"
           src="./assets/models/bookcase1.glb"
@@ -101,6 +104,12 @@
           id="pillar"
           src="./assets/models/pillar.glb"
         ></a-asset-item>
+
+        <audio
+          id="bg-music"
+          src="assets/music/ES_The Blind Cat - Jerry Lacey.mp3"
+          preload="auto"
+        ></audio>
 
         <img id="wood" src="./assets/textures/wood.jpg" />
         <img id="wood-nrm" src="./assets/textures/wood-nrm.jpg" />
@@ -311,7 +320,14 @@
         position="4.8 0.3 -1"
         rotation="0 -90 0"
         scale="0.4 0.4 0.4"
-      ></a-gltf-model>
+
+      >
+      <a-sound
+      src="#bg-music"
+      autoplay="true"
+      loop="true"
+      ></a-sound>
+    </a-gltf-model>
       <a-gltf-model
         static-body
         src="#bookcase"
@@ -551,18 +567,19 @@
         side="double"
       >
         <a-text
-        font="https://cdn.aframe.io/fonts/Monoid.fnt"
-        position="0 0 -0.2"
-        value="Ok, this might not have been what you wanted to find out. 
+          font="https://cdn.aframe.io/fonts/Monoid.fnt"
+          position="0 0 -0.2"
+          value="Ok, this might not have been what you wanted to find out. 
         You should have paid me the bitcoins and continued to live in denial. 
         But you didn't and here you are. Now it's time to get out. 
         Beware of the policecars."
-        wrap-count="25"
-        width="1.5"
-        align="center"
-        color="black"
-        rotation="0 180 0"
-        > </a-text>
+          wrap-count="25"
+          width="1.5"
+          align="center"
+          color="black"
+          rotation="0 180 0"
+        >
+        </a-text>
       </a-image>
 
       <a-entity

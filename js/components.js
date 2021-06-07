@@ -17,6 +17,8 @@ AFRAME.registerComponent('camera-text', {
   },
 });
 
+
+
 AFRAME.registerComponent('change-perspective', {
   schema: {
     target: { type: 'selector', default: '' },
