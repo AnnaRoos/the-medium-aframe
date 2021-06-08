@@ -25,7 +25,7 @@ AFRAME.registerComponent('change-perspective', {
   init: function () {
     const self = this;
     this.eventHandlerFn = function () {
-      if (self.data.target.object3D.position.y < 0) {
+      if (self.data.target.object3D.position.y < 1) {
         self.data.target.object3D.position.y += 1.2;
         self.el.emit('perspective');
         const spotlight = document.querySelector('#spot-1');
@@ -42,7 +42,7 @@ AFRAME.registerComponent('change-perspective', {
           'value',
           'Follow the light! \n Second task: Invisible.'
         );
-      } else if (self.data.target.object3D.position.y === 0) {
+      } else if (self.data.target.object3D.position.y === 1.6) {
         self.data.target.object3D.position.y -= 1.2;
       }
     };
