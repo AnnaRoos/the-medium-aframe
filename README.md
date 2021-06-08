@@ -10,11 +10,11 @@ Now, at the end of your journey, you can't wait to get out and get home...
 
 ## Play the live version here
 
-[Game start: ](https://escapefromhyperisland.github.io/pleasantville)
+[Game start ](https://escapefromhyperisland.github.io/pleasantville)
 
-[This level: ](https://escapefromhyperisland.github.io/pleasantville/level-5)
+[This level ](https://escapefromhyperisland.github.io/pleasantville/level-5)
 
-[Escape from Hyper Island: ](https://escapefromhyperisland.github.io)
+[Escape from Hyper Island ](https://escapefromhyperisland.github.io)
 
 
 
