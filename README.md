@@ -28,9 +28,17 @@ I decided to work with A-frame and AR.js. It consists of a 3D environment where 
 **Tools and Tech stack:**
 
 A-frame
+
 AR.js
 
+
+
 **Credits:**
+Photo: "Lost in city of creativity" by Thomas Dacker on Unsplash
+
+Music: "The Blind Cat" by Jerry Lacey courtesy of www.epidemicsound.com
+
+3D models: Twisted pillar - Paul Simonnet, Table - Poly by Google, Chair - Poly by Google, Fireplace - Michael Pretz, Synth - Ron Millar, Pig - Poly by Google, Chandelier - Poly by Google, Mirror - Poly by Google, Bookcase - Angelina Gu, Door - Poly by Google
 
 **Links to the other levels in the Pleasantville universe:**
 
