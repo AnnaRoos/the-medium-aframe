@@ -32,9 +32,6 @@ AR.js
 
 **Credits:**
 
-
-**Repositories:**
-
 **Links to the other levels in the Pleasantville universe:**
 
 - [Level 1 - Sofia Darke](https://github.com/sofiadarkeweb/pleasantville)
