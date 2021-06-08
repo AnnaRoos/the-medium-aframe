@@ -1,11 +1,14 @@
-# Escape from Pleasantville - level 5
+# THE MEDIUM
+Escape from Pleasantville - Level 5
+A Hyper Island school project.
+Year: 2021.
+Module: Exploring code.
 
-Level 5 is part of 'Escape from Pleasantville', a group coding project in which myself and five other teammates each created a level that makes up an entire game. This was created as part of Hyper Island's exploring code module, wherein we were encouraged to experiment with new technologies and think about aspects of the web experience that weren't necessarily related to code.
+"Escape from Pleasantville" is part of a group project by the Front End Developer class 2021. It consists of seven different worlds, with several levels in each world. I made Level 5 in the world we call "Escape from Pleasantville". In the code module Expolring code, we were encouraged to experiment with new technologies such as VR, AR and machine learning and think about aspects of the web experience that weren't necessarily related to code such as sound and light.
 
-Escape from Pleasantville is a story of the missing Alex, told through a series of postcards. You're on a mission to find out just what happened to them, and the trail has led you to a bizarre little town called Pleasantville.
+I decided to work with A-frame and AR.js. It consists of a 3D environment where you solve tasks and to get out you get clues from AR-markers that you look at with your phone.
 
-Now, at the end of your journey, you can't wait to get out and get home...
-
+"Escape from Pleasantville" is a story of the missing Alex, told through a series of postcards. You're on a mission to find out just what happened to them, and the trail has led you to a bizarre little town called Pleasantville. When arriving to The Medium you are almost at the end of your journey, and it is here that you get your final answers.
 
 
 ## Play the live version here
@@ -20,6 +23,13 @@ Now, at the end of your journey, you can't wait to get out and get home...
 
 **Tools and Tech stack:**
 
+A-frame
+AR.js
+
+**Credits:**
+
+
+**Repositories:**
 
 **Links to the other levels in the Pleasantville universe:**
 
