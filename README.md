@@ -1,7 +1,11 @@
 # THE MEDIUM
+
 Escape from Pleasantville - Level 5
+
 A Hyper Island school project.
+
 Year: 2021.
+
 Module: Exploring code.
 
 "Escape from Pleasantville" is part of a group project by the Front End Developer class 2021. It consists of seven different worlds, with several levels in each world. I made Level 5 in the world we call "Escape from Pleasantville". In the code module Expolring code, we were encouraged to experiment with new technologies such as VR, AR and machine learning and think about aspects of the web experience that weren't necessarily related to code such as sound and light.
