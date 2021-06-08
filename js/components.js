@@ -17,8 +17,6 @@ AFRAME.registerComponent('camera-text', {
   },
 });
 
-
-
 AFRAME.registerComponent('change-perspective', {
   schema: {
     target: { type: 'selector', default: '' },
@@ -42,7 +40,7 @@ AFRAME.registerComponent('change-perspective', {
         self.el.sceneEl.appendChild(newLight);
         self.data.text.setAttribute(
           'value',
-          'Follow the light! \n II: Invisible.'
+          'Follow the light! \n Second task: Invisible.'
         );
       } else if (self.data.target.object3D.position.y === 0) {
         self.data.target.object3D.position.y -= 1.2;
@@ -91,7 +89,7 @@ AFRAME.registerComponent('fade-away', {
           el.sceneEl.appendChild(newLight);
           data.text.setAttribute(
             'value',
-            'Follow the light! \n III: When pigs fly.'
+            'Follow the light! \n Third task: When pigs fly...'
           );
         }, 5000);
 
@@ -184,6 +182,14 @@ AFRAME.registerComponent('tarot', {
         tarotCard1.setAttribute('width', '0.3');
         tarotCard1.setAttribute('position', '4 1 0');
         tarotCard1.setAttribute('rotation', '-90 -90 0');
+        tarotCard1.setAttribute('animation', {
+          property: 'material.color',
+          from: '#FF0000',
+          to: '#FFFF00',
+          loop: true,
+          dir: 'alternate',
+          dur: 1500,
+        });
         el.sceneEl.appendChild(tarotCard1);
 
         const tarotCard2 = document.createElement('a-plane');
@@ -251,9 +257,25 @@ AFRAME.registerComponent('flip-card', {
     data.card1.addEventListener('click', function () {
       data.marker1.object3D.visible = true;
       data.card1.object3D.visible = false;
+      data.card2.setAttribute('animation', {
+        property: 'material.color',
+        from: '#FF0000',
+        to: '#FFFF00',
+        loop: true,
+        dir: 'alternate',
+        dur: 1500,
+      });
       data.card2.addEventListener('click', function () {
         data.marker2.object3D.visible = true;
         data.card2.object3D.visible = false;
+        data.card3.setAttribute('animation', {
+          property: 'material.color',
+          from: '#FF0000',
+          to: '#FFFF00',
+          loop: true,
+          dir: 'alternate',
+          dur: 1500,
+        });
         data.card3.addEventListener('click', function () {
           data.marker3.object3D.visible = true;
           data.card3.object3D.visible = false;
