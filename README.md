@@ -27,4 +27,4 @@ Now, at the end of your journey, you can't wait to get out and get home...
 - [Level 2 - Agnes Kalström](https://github.com/agneskalstrom/level-2-the-dream)
 - [Level 3 - Elin Amrén](https://github.com/elinamren/pleasantville-level3)
 - [Level 4 - Emilia Frisell](https://github.com/emiliafrisell/MazeGame)
-- [Level 6 - Neha Hirve](https://github.com/AnnaRoos/the-medium-aframe)
+- [Level 6 - Neha Hirve](https://github.com/nehahirve/pleasantville)
