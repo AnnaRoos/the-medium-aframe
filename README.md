@@ -18,7 +18,7 @@ I decided to work with A-frame and AR.js. My level consists of a 3D environment 
 
 **Play the live version here:**
 
-[Escape from Pleasantville ](https://escapefromhyperisland.github.io/pleasantville)
+[Escape from Pleasantville ](https://escapefromhyperisland.github.io/game/?world=5)
 
 [The Medium ](https://escapefromhyperisland.github.io/game/?world=5&level=5)
 
