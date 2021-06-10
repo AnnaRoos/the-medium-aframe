@@ -14,8 +14,7 @@ I decided to work with A-frame and AR.js. It consists of a 3D environment where 
 
 "Escape from Pleasantville" is a story of the missing Alex, told through a series of postcards. You're on a mission to find out just what happened to them, and the trail has led you to a bizarre little town called Pleasantville. When arriving to The Medium you are almost at the end of your journey, and it is here that you get your final answers.
 
-
-## Play the live version here
+**Play the live version here:**
 
 [Game start ](https://escapefromhyperisland.github.io/pleasantville)
 
@@ -27,9 +26,11 @@ I decided to work with A-frame and AR.js. It consists of a 3D environment where 
 
 **Tools and Tech stack:**
 
-A-frame
+[A-frame](https://aframe.io/)
 
-AR.js
+[AR.js](https://ar-js-org.github.io/AR.js-Docs/)
+
+Libraries used withi A-frame: https://github.com/n5ro/aframe-extras, https://www.npmjs.com/package/aframe-look-at-component, https://github.com/wmurphyrd/aframe-super-hands-component, https://github.com/n5ro/aframe-physics-system, https://github.com/donmccurdy/aframe-inspector-plugin-recast
 
 
 
