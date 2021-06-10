@@ -34,7 +34,7 @@ I decided to work with A-frame and AR.js. My level consists of a 3D environment 
 
 Libraries used within A-frame: https://github.com/n5ro/aframe-extras, https://www.npmjs.com/package/aframe-look-at-component, https://github.com/wmurphyrd/aframe-super-hands-component, https://github.com/n5ro/aframe-physics-system, https://github.com/donmccurdy/aframe-inspector-plugin-recast
 
-Markers made in [Pixilart.com](https://www.pixilart.com/) and [AR.js Marker Training](https://ar-js-org.github.io/AR.js/three.js/examples/marker-training/examples/generator.html)
+AR-markers made in [Pixilart.com](https://www.pixilart.com/) and [AR.js Marker Training](https://ar-js-org.github.io/AR.js/three.js/examples/marker-training/examples/generator.html)
 
 **Credits:**
 
