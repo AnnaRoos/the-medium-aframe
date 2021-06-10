@@ -17,10 +17,15 @@ const hideInstructions = () => {
 postcard.addEventListener('click', hidePostcard);
 introMessage.addEventListener('click', hideInstructions);
 
+backgroundMusic = document.querySelector('a-sound');
+
 const play = () => {
   window.removeEventListener('click', play);
   window.removeEventListener('touchstart', play);
-  document.querySelector('a-sound').components.sound.playSound();
+  backgroundMusic.components.sound.playSound();
 };
-window.addEventListener('click', play);
-window.addEventListener('touchstart', play);
+
+backgroundMusic.addEventListener('loaded', () => {
+  window.addEventListener('click', play);
+  window.addEventListener('touchstart', play);
+});

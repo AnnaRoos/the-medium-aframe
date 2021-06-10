@@ -224,7 +224,7 @@ AFRAME.registerComponent('tarot', {
           marker2: '#marker-2',
           marker3: '#marker-3',
           camRig: '#camera-rig',
-          endMessage: '#end-message',
+          endMessage: '#car',
         });
         el.sceneEl.appendChild(qrCode);
 

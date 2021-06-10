@@ -127,6 +127,7 @@
         <img id="speechbubble" src="./assets/pictures/speech.png" />
         <img id="qr" src="assets/tarot/frame.png" />
         <img id="sunny-field" src="assets/pictures/sunrise-field.jpg" />
+        <img id="car-pic" src="assets/pictures/car.png" />
       </a-assets>
 
       <a-sky src="#sunny-field"></a-sky>
@@ -233,6 +234,7 @@
         repeat: 10;"
       ></a-box>
       <a-triangle
+        static-body
         position="-5 3 -5"
         material="color: #423207;
         side: double;
@@ -260,6 +262,7 @@
         repeat: 10;"
       ></a-plane>
       <a-triangle
+        static-body
         position="-5 3 5"
         material="color: #423207;
         side: double;
@@ -319,14 +322,9 @@
         position="4.8 0.3 -1"
         rotation="0 -90 0"
         scale="0.4 0.4 0.4"
-
       >
-      <a-sound
-      src="#bg-music"
-      loop="true"
-      volume="3"
-      ></a-sound>
-    </a-gltf-model>
+        <a-sound id="#music" src="#bg-music" loop="true" volume="3"></a-sound>
+      </a-gltf-model>
       <a-gltf-model
         static-body
         src="#bookcase"
@@ -345,6 +343,7 @@
         rotation="0 100 0"
       ></a-text>
       <a-entity
+        id="change"
         text="font: https://cdn.aframe.io/fonts/Monoid.fnt;
         value: CHANGE;
         width: 1.5;
@@ -372,6 +371,7 @@
         rotation="-10 90 85"
       ></a-text>
       <a-entity
+        id="first-truth"
         text="font: https://cdn.aframe.io/fonts/Monoid.fnt;
         value: First truth: \n
         You were not that \n
@@ -567,7 +567,7 @@
       >
         <a-text
           font="https://cdn.aframe.io/fonts/Monoid.fnt"
-          position="0 0 -0.2"
+          position="0 0.5 -0.2"
           value="Ok, this might not have been what you wanted to find out. 
         You should have paid me the bitcoins and continued to live in denial. 
         But you didn't and here you are. Now it's time to get out. 
@@ -579,12 +579,26 @@
           rotation="0 180 0"
         >
         </a-text>
+        <a-image
+        id="car"
+          src="#car-pic"
+          height="0.65"
+          width="1.5"
+          position="0 -0.8 -0.1"
+          rotation="0 180 0"
+          animation="property: material.color;
+                             from: #FF0000;
+                             to: #FFFF00;
+                             loop: true;
+                             dir: alternate;
+                             dur: 1500"
+        ></a-image>
       </a-image>
 
       <a-entity
         id="camera-rig"
         progressive-controls
-        movement-controls="constrainToNavMesh: true"
+        movement-controls="constrainToNavMesh: false"
         position="0 0 3"
       >
         <a-entity
