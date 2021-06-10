@@ -6,13 +6,15 @@ A Hyper Island school project.
 
 Year: 2021.
 
+Program: Front end developer.
+
 Module: Exploring code.
 
-"Escape from Pleasantville" is part of a group project by the Front End Developer class 2021. It consists of seven different worlds, with several levels in each world. I made Level 5 in the world we call "Escape from Pleasantville". In the code module Expolring code, we were encouraged to experiment with new technologies such as VR, AR and machine learning and think about aspects of the web experience that weren't necessarily related to code such as sound and light.
+The game "Escape from Pleasantville" is part of the class project "Escape from Hyper Island". It consists of a large game made up of seven different worlds, with several levels in each world. My level is Level 5 in World 5 and we call it "Escape from Pleasantville". Creating this game was part of the course module "Exploring code", in which we were encouraged to experiment with new technologies such as VR, AR and machine learning and think about aspects of the web experience that weren't necessarily related to code such as sound and light.
 
-I decided to work with A-frame and AR.js. It consists of a 3D environment where you solve tasks and to get out you get clues from AR-markers that you look at with your phone.
+I decided to work with A-frame and AR.js. My level consists of a 3D environment where you solve tasks and to get out you get clues from AR-markers that you look at with your phone. The level is deployed on Github pages but the AR-part is on Glitch.
 
-"Escape from Pleasantville" is a story of the missing Alex, told through a series of postcards. You're on a mission to find out just what happened to them, and the trail has led you to a bizarre little town called Pleasantville. When arriving to The Medium you are almost at the end of your journey, and it is here that you get your final answers.
+"Escape from Pleasantville" is a story about a main character, the player, who goes on a mission to find their missing loved one Alex. The story is told through a series of postcards and messages. The trail has led you to a bizarre little town called Pleasantville. When arriving to my level, called "The Medium", you are almost at the end of your journey, and it is here that you get your final answers.
 
 **Play the live version here:**
 
@@ -32,7 +34,7 @@ I decided to work with A-frame and AR.js. It consists of a 3D environment where 
 
 Libraries used within A-frame: https://github.com/n5ro/aframe-extras, https://www.npmjs.com/package/aframe-look-at-component, https://github.com/wmurphyrd/aframe-super-hands-component, https://github.com/n5ro/aframe-physics-system, https://github.com/donmccurdy/aframe-inspector-plugin-recast
 
-
+Markers made in [Pixilart.com](https://www.pixilart.com/) and [AR.js Marker Training](https://ar-js-org.github.io/AR.js/three.js/examples/marker-training/examples/generator.html)
 
 **Credits:**
 
