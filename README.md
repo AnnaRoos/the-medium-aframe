@@ -1,6 +1,6 @@
 # THE MEDIUM
 
-Escape from Pleasantville - Level 5
+**Escape from Pleasantville - Level 5: The Medium**
 
 A Hyper Island school project.
 
@@ -8,9 +8,9 @@ Year: 2021.
 
 Program: Front end developer.
 
-Module: Exploring code.
+Course module: Exploring code.
 
-The game "Escape from Pleasantville" is part of the class project "Escape from Hyper Island". It consists of a large game made up of seven different worlds, with several levels in each world. My level is Level 5 in World 5 and we call it "Escape from Pleasantville". Creating this game was part of the course module "Exploring code", in which we were encouraged to experiment with new technologies such as VR, AR and machine learning and think about aspects of the web experience that weren't necessarily related to code such as sound and light.
+The game "Escape from Pleasantville" is part of the class project "Escape from Hyper Island". The whole class game consists of seven different worlds, with several levels in each world. My level is Level 5 in World 5, which we call "Escape from Pleasantville". Creating this game was part of the course module "Exploring code", in which we were encouraged to experiment with new technologies such as VR, AR and machine learning and think about aspects of the web experience that weren't necessarily related to code such as sound and light.
 
 I decided to work with A-frame and AR.js. My level consists of a 3D environment where you solve tasks and to get out you get clues from AR-markers that you look at with your phone. The level is deployed on Github pages but the AR-part is on Glitch.
 
