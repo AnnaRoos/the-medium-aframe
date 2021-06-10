@@ -30,7 +30,7 @@ I decided to work with A-frame and AR.js. It consists of a 3D environment where 
 
 [AR.js](https://ar-js-org.github.io/AR.js-Docs/)
 
-Libraries used withi A-frame: https://github.com/n5ro/aframe-extras, https://www.npmjs.com/package/aframe-look-at-component, https://github.com/wmurphyrd/aframe-super-hands-component, https://github.com/n5ro/aframe-physics-system, https://github.com/donmccurdy/aframe-inspector-plugin-recast
+Libraries used within A-frame: https://github.com/n5ro/aframe-extras, https://www.npmjs.com/package/aframe-look-at-component, https://github.com/wmurphyrd/aframe-super-hands-component, https://github.com/n5ro/aframe-physics-system, https://github.com/donmccurdy/aframe-inspector-plugin-recast
 
 
 
