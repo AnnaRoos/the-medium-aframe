@@ -22,7 +22,7 @@ I decided to work with A-frame and AR.js. My level consists of a 3D environment 
 
 [The Medium ](https://escapefromhyperisland.github.io/game/?world=5&level=5)
 
-[Escape from Hyper Island ](https://escapefromhyperisland.github.io)
+[Escape from Hyper Island (The whole game with all worlds from the start) ](https://escapefromhyperisland.github.io/game/?world=0)
 
 
 
